@@ -60,7 +60,7 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Lok Jumbish Project:</h5>
-    <p class="card-text">
+    <p class="card-text text-dark">
     The Lok Jumbish (LJ) project has 75 blocks covering approximately 12 million of population. LJ works hand in hand with government agencies, teachers, NGOs, elected representatives and the people in an interactive group effort to promote universalization of primary education. It works on seven guiding principles. These are:</p>
 A process rather than a product approach.
   	<ul>
@@ -72,14 +72,12 @@ A process rather than a product approach.
 
   		<li>Integration with the mainstream education system.</li>
   		<li> Flexibility of management.</li>
-  		<li>Creating multiple levels of leadership committed to quality and mission mode.
-</li>
-  	</ul>
+  		
+</ul>
 
- </div>
 </div>
-
-	</div>
+</div>
+</div>
 
 	<div class="col-md-6">
 	<h1 class="text-center text-dark"> </h1>
@@ -93,25 +91,39 @@ A process rather than a product approach.
   <div class="card-body">
     <h5 class="card-title">Lok Jumbish Project:</h5>
     <p class="card-text">
-    The Lok Jumbish (LJ) project has 75 blocks covering approximately 12 million of population. LJ works hand in hand with government agencies, teachers, NGOs, elected representatives and the people in an interactive group effort to promote universalization of primary education. It works on seven guiding principles. These are:</p>
-A process rather than a product approach.
-  	<ul>
+    Shiksha Karmi Project: The Shiksha Karmi Project (SKP) is being implemented since 1987, with assistance from the Swedish International Development Cooperation Agency (SIDA). It aims universalisation and qualitative improvement of primary education in the backward and remote villages of Rajasthan, with special focus on girls. SKP has set up the Village Education Committees (VECs) in 2000 villages to promote community involvement in primary education and encourage village level planning. SKP also runs non-formal classes known as Prehar Pathshalas schools of convenient timings. For girl’s education, Angan Pathshalas are being run in three blocks. The programme at present covers over 150,000 students in 1,785 schools and 3,250 Prehar Pathshalas , involving over 4,271 Shiksha Karmis.</p>
 
-  		
-  		<li>Partnerships.</li>
-  		<li>Decentralized functioning.</li>
-  		<li>Participatory learning.</li>
-
-  		<li>Integration with the mainstream education system.</li>
-  		<li> Flexibility of management.</li>
-  		<li>Creating multiple levels of leadership committed to quality and mission mode.
-</li>
-  	</ul>
+  	
 
  </div>
 </div>
 
 	</div>
+</div>
+</div>
+
+<hr>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			
+
+			<iframe width="100%" height="537" src="https://www.youtube.com/embed/n67kGmGHYxs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+		</div>
+
+
+		<div class="col-md-4">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5844676839033!2d77.6038874145776!3d12.934407390880265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b277a93807%3A0x88518f37b39dabd0!2sChrist+University!5e0!3m2!1sen!2sin!4v1551815061545" width="auto" height="537" frameborder="0" style="border:0" ></iframe>
+		</div>
+
+	</div>
+	
+
+</div>
+
+
+</body>
+
 
 
 
