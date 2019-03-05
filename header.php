@@ -15,16 +15,16 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link navbar-brand" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link navbar-brand" href="#">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login </a>
+        <a class="nav-link navbar-brand" href="#">Login </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Signup</a>
+        <a class="nav-link navbar-brand" href="#" tabindex="-1" aria-disabled="true">Signup</a>
       </li>
     </ul>
   </div>
