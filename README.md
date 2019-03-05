@@ -6,8 +6,9 @@ Modules of our Platform:
 1)tutor
 2)students
 
+
  Web Technology: 
  Front End: HTML,CSS, Bootstarp, javascript, jquery
  back end: PHP
  Database : MYSQL
-  Server:xampp
+ Server:xampp
