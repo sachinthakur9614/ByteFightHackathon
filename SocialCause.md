@@ -8,4 +8,5 @@ Social Cause our wesite solve is:
 6) We are trying to get as  many tutor  as possible who can teach them for free so that they dont have to  pay much ammount 
 7) We are providing the self defence traning to girls 
 8) Provide the soft skills training to the students once in a year 
+9) girls who are not allowed to out of native for thier higher study they have the big  bang to study on our platform
 
