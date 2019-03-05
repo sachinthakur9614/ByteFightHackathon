@@ -26,7 +26,9 @@
     	
     </ul>
     <p class="card-text text-dark">
-    The Lok Jumbish (LJ) project has 75 blocks covering approximately 12 million of population. LJ works hand in hand with government agencies, teachers, NGOs, elected representatives and the people in an interactive group effort to promote universalization of primary education. It works on seven guiding principles. These are:</p>
+     Till date we have given contribution  in the form of  curricular and provided in the form self defence and student who are intereste 
+
+    </p>
 A process rather than a product approach.
   	<ul>
 
