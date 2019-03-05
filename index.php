@@ -102,17 +102,20 @@ A process rather than a product approach.
 </div>
 </div>
 
+<br>
 <hr>
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
 			
-
+<h5>  Glimse of What we have done </h5>
 			<iframe width="100%" height="537" src="https://www.youtube.com/embed/n67kGmGHYxs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
 		</div>
 
 
 		<div class="col-md-4">
+
+			<h5>Here We are</h5>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5844676839033!2d77.6038874145776!3d12.934407390880265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b277a93807%3A0x88518f37b39dabd0!2sChrist+University!5e0!3m2!1sen!2sin!4v1551815061545" width="auto" height="537" frameborder="0" style="border:0" ></iframe>
 		</div>
 

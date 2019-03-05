@@ -8,6 +8,7 @@
       <h2 class="text-center"><a  href="about.php"  class="text-center">About Us </a></h2><br>
       <h5 class="text-center">Contact Us</h5>
       <p class="text-center"><b>Email Id:</b>info@ruraleducation.co.in</p>
+      <p class="text-center"><b>Mobile No:</b>+91-8792560572</p>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="text-align: right;">  
