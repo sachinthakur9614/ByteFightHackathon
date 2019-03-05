@@ -138,13 +138,13 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 
 
-
+/*
 
 
 if(empty($error))
 {
 
-
+*/
 
 
   $sql = "INSERT INTO `signup`( `fname`, `lname`, `email`, `password`, `zipcode`, `city`, `state`, `country`, `mobile`) VALUES ('$fname','$lname','$email','$password','$zipcode','$city','$state','$country','$mobile')";
@@ -172,13 +172,12 @@ if(empty($error))
   }
 
 
-
+/*
 }
 else
 {
  $error=" Could not sql process";
-}
-
+*/
 }
  ?>
 

@@ -21,10 +21,10 @@
         <a class="nav-link navbar-brand navbar-dark" href="#">About</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link navbar-brand navbar-dark" href="#">Login </a>
+        <a class="nav-link navbar-brand navbar-dark" href="login.php">Login </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link navbar-brand navbar-dark" href="#" tabindex="-1" aria-disabled="true">Signup</a>
+        <a class="nav-link navbar-brand navbar-dark" href="signup.php" tabindex="-1" aria-disabled="true">Signup</a>
       </li>
     </ul>
   </div>
