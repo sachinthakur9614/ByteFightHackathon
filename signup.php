@@ -15,22 +15,22 @@
 if(isset($_POST['signup'])){
 
 $error="";
-if(!empty($_POST['type']))
+if(!empty($_POST['fname']))
 {
-  $type = htmlspecialchars($_POST['type'],ENT_QUOTES);
+  $fname = htmlspecialchars($_POST['fname'],ENT_QUOTES);
 }
 else
 {
-  $error.="Please select Student/Teacher<br>";
+  $error.="Please Enter The First Name<br>";
 }
 
-if(!empty($_POST['name']))
+if(!empty($_POST['lname']))
 {
-  $name = htmlspecialchars($_POST['name'],ENT_QUOTES);
+  $lname = htmlspecialchars($_POST['lname'],ENT_QUOTES);
 }
 else
 {
-  $error.="Please enter name<br>";
+  $error.="Please Enter The Last Name<br>";
 }
 
 if(!empty($_POST['email']))
@@ -39,7 +39,7 @@ $email = htmlspecialchars($_POST['email'],ENT_QUOTES);
 }
 else
 {
-  $error.="Please enter email id<br>";
+  $error.="Please Enter Your Email id<br>";
 }
 
 if(!empty($_POST['password']))
@@ -48,27 +48,71 @@ $password = $_POST['password'];
 }
 else
 {
-  $error.="Please enter password<br>";
+  $error.="Please Enter Your Password<br>";
 }
 
-if(!empty($_POST['repassword']))
-{
-$repassword = $_POST['repassword'];
-}
-else
-{
-  $error.="Please enter re-password<br>";
-}
+
 $role = "user";
 
-if(!empty($_POST['regno']))
+if(!empty($_POST['zipcode']))
 {
-$regno = htmlspecialchars($_POST['regno'],ENT_QUOTES);
+$zipcode = htmlspecialchars($_POST['zipcode'],ENT_QUOTES);
 }
 else
 {
-  $error.="Please enter registration no.<br>";
+  $error.="Please Enter the Zipcode<br>";
 }
+
+
+if(!empty($_POST['city']))
+{
+$city = htmlspecialchars($_POST['city'],ENT_QUOTES);
+}
+else
+{
+  $error.="Please Enter the City<br>";
+}
+
+
+if(!empty($_POST['State']))
+{
+$state = htmlspecialchars($_POST['State'],ENT_QUOTES);
+}
+else
+{
+  $error.="Please Enter State<br>";
+}
+
+
+
+if(!empty($_POST['Country']))
+{
+$country = htmlspecialchars($_POST['Country'],ENT_QUOTES);
+}
+else
+{
+  $error.="Please Enter the Country<br>";
+}
+
+
+
+if(!empty($_POST['mobile']))
+{
+$mobile = htmlspecialchars($_POST['mobile'],ENT_QUOTES);
+}
+else
+{
+  $error.="Please Enter the Mobile Number <br>";
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -77,71 +121,28 @@ $mob = htmlspecialchars($_POST['mob'],ENT_QUOTES);
 $date = date("Y-m-d H:i:s");
 
 
-if($type=="Faculty")
-{
-  $class = "";
-  $course = "";
-}
-else if($type=="Student")
-{
-  if(empty($_POST['class']))
-  {
-    $error.="Please enter your class<br>";
-  }
-  else
-  {
-    $class = htmlspecialchars($_POST['class'],ENT_QUOTES);
-  }
-
-  if(empty($_POST['course']))
-  {
-    $error.="Please enter your course<br>";
-  }
-  else
-  {
-    $course = htmlspecialchars($_POST['course'],ENT_QUOTES);
-  }
-  
-}
-
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   $error .= "Invalid Email Id<br>";
 }
 
-if($type=="Faculty" && strlen($regno)>4)
+
+
+
+
+
+if(empty($error))
 {
-  $error.="Invalid Registration Number<br>";
-}
-
-if (strlen($email)<20 || substr($email, -19)!="christuniversity.in") {
-  $error .= "Invalid Email Id<br>";
-}
-
-if($type=="Student" && strlen($regno)!=7)
-{
-  $error.="Invalid Registration Number<br>";
-}
-
-if($password!=$repassword)
-{
-  $error.="Passwords does not match<br>";
-}
-
-$pass = password_hash($password,PASSWORD_DEFAULT);
-
-$vercode = md5(uniqid(rand(), true));
-
- 
-    $ucheck_sql = "SELECT uemail,uregno FROM users WHERE uemail='$email' OR uregno='$regno'";
-    $ucheck_result = $conn->query($ucheck_sql); 
-
-    if($ucheck_result->num_rows != 0)
-    {
-      $error.="Email Id or Registration No. Already Exists!<br>";
-    }
 
 
-}
+
+  $sql = "INSERT INTO `signup`( `fname`, `lname`, `email`, `password`, `zipcode`, `city`, `state`, `country`, `mobile`) VALUES ('$fname','$lname','$email','$password','$zipcode','$city','$state','$country','$mobile')";
+
+  if ($conn->query($sql) === TRUE) 
+  {
+
+    $uid = $conn->insert_id;
+
+
 
  ?>
 
@@ -192,28 +193,35 @@ $vercode = md5(uniqid(rand(), true));
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>City<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control" maxlength="7" name="zipcode" placeholder="Zip Code" size="21" required>
+        <input type="text" class="form-control"  name="city" placeholder="Bangalore" size="21" required>
   </div>
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>State<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control" maxlength="7" name="zipcode" placeholder="Zip Code" size="21" required>
+        <input type="text" class="form-control"  name="state" placeholder="Karnataka" size="21" required>
   </div>
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>Country<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control" maxlength="7"  name="zipcode" placeholder="Zip Code" size="21" required>
+        <input type="text" class="form-control"   name="country" placeholder="Inida" size="21" required>
   </div>
 
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>Mobile Number<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control" maxlength="7" onkeypress="return validateNumber(event)" name="zipcode" placeholder="Zip Code" size="21" required>
+        <input type="text" class="form-control" maxlength="7" onkeypress="return validateNumber(event)" name="mobile" placeholder="Zip Code" size="21" required>
   </div>
 
+
+
+  <div class=" form-group input-group-lg form-group">
+  
+        
+        <input type="buttons" class="form-control btn btn-info" maxlength="7" onkeypress="return validateNumber(event)" name="signup" placeholder="Submit" size="21" required>
+  </div>
 
   
 
