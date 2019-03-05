@@ -4,7 +4,10 @@
 <html>
 
 <head>
-<?php include "header.php" ?>
+<?php include "header.php";
+include "db.php";
+
+ ?>
 
 
 
@@ -116,15 +119,15 @@ else
 
 
 
-$mob = htmlspecialchars($_POST['mob'],ENT_QUOTES);
+//$mob = htmlspecialchars($_POST['mob'],ENT_QUOTES);
 
 $date = date("Y-m-d H:i:s");
 
-
+/*
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   $error .= "Invalid Email Id<br>";
 }
-
+*/
 
 
 
@@ -135,15 +138,40 @@ if(empty($error))
 
 
 
+
   $sql = "INSERT INTO `signup`( `fname`, `lname`, `email`, `password`, `zipcode`, `city`, `state`, `country`, `mobile`) VALUES ('$fname','$lname','$email','$password','$zipcode','$city','$state','$country','$mobile')";
+
+    header('Location: index.php');
 
   if ($conn->query($sql) === TRUE) 
   {
 
     $uid = $conn->insert_id;
 
+    header('Location: index.php');
 
 
+
+
+
+    $success = "Thank you for registering on Labyrinth. Verification mail has been sent to your email id. Verify your account before loging in.";
+    echo $success;
+
+  }
+  else 
+  {
+    $error .= "<b>Error!</b> Server Error : " . $conn->error;
+  }
+
+
+
+}
+else
+{
+ $error=" Could not sql process";
+}
+
+}
  ?>
 
 	<title>Sign up</title>
@@ -156,13 +184,25 @@ if(empty($error))
 			<div class="col-md-6">
 
 <h1 class="text-center"> Registration</h1>
+<hr>
 	
-<form action="#" method="post" id="signup-form">
+
+
+<div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-3 login-box">
+
+<?php if (isset($success) && !empty($success)) { ?><div class="alert alert-success" role="alert"><?php echo $success; ?></div><br><?php } ?>
+
+<?php if (isset($_SESSION['success_mess']) && !empty($_SESSION['success_mess'])) { ?><div class="alert alert-success" role="alert"><?php echo $_SESSION['success_mess']; $_SESSION['success_mess']=""; ?></div><br><?php } ?>
+<?php if (isset($error) && !empty($error)) { ?><div class="alert alert-danger" role="alert"><?php echo $error; ?></div><br><?php } ?>
+
+
+
+<form action="" method="post" id="signup-form">
   
   <div class=" form-group input-group-lg form-group">
      
          <label for="student_faculty"><h4>First Name<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control"  name="fname" placeholder="First Name" size="21" required>
+        <input type="text" class="form-control"  name="fname" placeholder="First Name" size="21">
   </div>
  
 
@@ -174,8 +214,8 @@ if(empty($error))
 
   <div class=" form-group input-group-lg form-group">
 
-         <label for="student_faculty"><h4>Email Name<sup>*</sup> : &nbsp;</h4></label>
-        <input type="password" class="form-control"   name="password" placeholder="example@something.com" size="21" required>
+         <label for="student_tutor"><h4>Email Name<sup>*</sup> : &nbsp;</h4></label>
+        <input type="email" class="form-control"   name="password" placeholder="example@something.com" size="21" required>
   </div>
 
   <div class=" form-group input-group-lg form-group">
@@ -205,14 +245,14 @@ if(empty($error))
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>Country<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control"   name="country" placeholder="Inida" size="21" required>
+        <input type="text" class="form-control"   name="country" placeholder="India" size="21" required>
   </div>
 
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>Mobile Number<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control" maxlength="7" onkeypress="return validateNumber(event)" name="mobile" placeholder="Zip Code" size="21" required>
+        <input type="text" class="form-control"  minlength="10" maxlength="10" onkeypress="return validateNumber(event)" name="mobile" placeholder="Mobile No" size="21" required>
   </div>
 
 
@@ -220,7 +260,7 @@ if(empty($error))
   <div class=" form-group input-group-lg form-group">
   
         
-        <input type="buttons" class="form-control btn btn-info" maxlength="7" onkeypress="return validateNumber(event)" name="signup" placeholder="Submit" size="21" required>
+        <input type="Submit" class="form-control btn btn-info" name="signup" placeholder="Submit" required>
   </div>
 
   
