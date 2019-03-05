@@ -113,6 +113,14 @@ else
 
 
 
+    $ucheck_sql = "SELECT email FROM signup WHERE email='$email'";
+    $ucheck_result = $conn->query($ucheck_sql); 
+    if($ucheck_result->num_rows != 0)
+    {
+      $error.="Email Id or Registration No. Already Exists!<br>";
+    }
+
+
 
 
 
@@ -123,11 +131,11 @@ else
 
 $date = date("Y-m-d H:i:s");
 
-/*
+
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   $error .= "Invalid Email Id<br>";
 }
-*/
+
 
 
 
@@ -146,7 +154,7 @@ if(empty($error))
   if ($conn->query($sql) === TRUE) 
   {
 
-    $uid = $conn->insert_id;
+    //$uid = $conn->insert_id;
 
     header('Location: index.php');
 
@@ -209,37 +217,37 @@ else
   <div class=" form-group input-group-lg form-group">
     
          <label for="student_faculty"><h4>Last Name<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control" name="lname" placeholder="Last Name" size="21" required>
+        <input type="text" class="form-control" name="lname" placeholder="Last Name" size="21" >
   </div>
 
   <div class=" form-group input-group-lg form-group">
 
-         <label for="student_tutor"><h4>Email Name<sup>*</sup> : &nbsp;</h4></label>
-        <input type="email" class="form-control"   name="password" placeholder="example@something.com" size="21" required>
+         <label for="student_tutor"><h4>Email<sup>*</sup> : &nbsp;</h4></label>
+        <input type="email" class="form-control"   name="email" placeholder="example@something.com" size="21" >
   </div>
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>Password<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control"  name="fname" placeholder="First Name" size="21" required>
+        <input type="password" class="form-control"  name="password" placeholder="First Name" size="21" >
   </div>
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>ZipCode<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control" minlength="6" maxlength="6" onkeypress="return validateNumber(event)" name="zipcode" placeholder="Zip Code" size="21" required>
+        <input type="text" class="form-control" minlength="6" maxlength="6" onkeypress="return validateNumber(event)" name="zipcode" placeholder="Zip Code" size="21" >
   </div>
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>City<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control"  name="city" placeholder="Bangalore" size="21" required>
+        <input type="text" class="form-control"  name="city" placeholder="Bangalore" size="21" >
   </div>
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>State<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control"  name="state" placeholder="Karnataka" size="21" required>
+        <input type="text" class="form-control"  name="state" placeholder="Karnataka" size="21" >
   </div>
 
   <div class=" form-group input-group-lg form-group">
@@ -252,7 +260,7 @@ else
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>Mobile Number<sup>*</sup> : &nbsp;</h4></label>
-        <input type="text" class="form-control"  minlength="10" maxlength="10" onkeypress="return validateNumber(event)" name="mobile" placeholder="Mobile No" size="21" required>
+        <input type="text" class="form-control"  minlength="10" maxlength="10" onkeypress="return validateNumber(event)" name="mobile" placeholder="Mobile No" size="21" >
   </div>
 
 
