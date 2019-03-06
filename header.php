@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php session_start(); ?>
 <head>
   <title></title>
 <link rel="icon" type="image/png" href="../logo.png"/>
@@ -15,7 +16,7 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white " >
 
-  <a class="navbar-brand ml-15 pl-30" href="">  <img src="../logo.png"  height="50" width="50" > Rural Education</a>
+  <a class="navbar-brand ml-15 pl-30" href="">  <img src="../logo.png"  height="50" width="50" > The BlackBoard Drive</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,7 +29,7 @@
         <a class="nav-link navbar-brand navbar-dark" href="#">About</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link navbar-brand navbar-dark" href="login.php"><?php $_SESSION['username']  ?></a>
+        <a class="nav-link navbar-brand navbar-dark" href="login.php"><?php echo $_SESSION['name'];  ?></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link navbar-brand navbar-dark" href="../logout.php" tabindex="-1" aria-disabled="true">Logout</a>

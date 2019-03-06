@@ -10,6 +10,7 @@
 
   <link rel="icon" type="image/png" href="logo.png"/>
 <?php include "header.php";
+
 include "../db.php";
 
 
@@ -164,5 +165,61 @@ else
 	
 
 
+
+
+
+
+
+<div class="main row">
+
+
+
+<div class="main_container col-lg-9 col-md-9 col-sm-9 col-xs-12">
+  <div class="pull-right">
+     
+<div class="table-responsive content-bg">
+
+<h3> Courses Enroll</h3>
+        <table id="product-table" class=" table table-responsive table-striped    table-dark  table-bordered tablesorter">
+
+        <thead class="success  bg-secondary">
+        <tr class="primary">
+          <th width="20%" >Sl No.</th>
+          <th width="20%" scope="col">Course Id</th>
+          <th width="20%" scope="col">Course Enrolled</th>
+          <th width="40%" scope="col">Class</th>
+        
+          
+        </tr>
+      </thead>
+
+      <tbody>
+
+
+	<?php 
+
+          $event_sql = "SELECT * FROM CourseN ";//" ORDER BY edate DESC";
+       
+
+$event_result = $conn->query($event_sql);
+
+    if($event_result->num_rows > 0) {
+      $count=0;
+      while($sponsor_row = $event_result->fetch_assoc())
+      { ?>
+       <tr class="active  bg-secondary black text-black" >
+       <td class="warning bg-secondary  text-white" valign="middle"><?php echo $count+1; ?></td>
+       <td  class="warning" valign="middle"><?php echo $sponsor_row['courseId']; ?></td>
+       <td  class="warning"warning="middle"><?php echo $sponsor_row['coursename']; ?></td>
+       <td  class="warning" valign="middle"><?php echo $sponsor_row['class']; ?></td>
+      
+      </tr>
+
+
+<?php 
+
+}
+}
+?>
 
 

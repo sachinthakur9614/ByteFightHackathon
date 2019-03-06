@@ -167,9 +167,9 @@ else
         <thead class="success  bg-secondary">
         <tr class="primary">
           <th width="20%"  >Sl No.</th>
-          <th width="20%" scope="col">Dance Id</th>
-         <th width="20%" scope="col">Dance Form</th>
-          <th width="20%" scope="col">Group Type</th>
+          <th width="20%" scope="col">Id</th>
+         <th width="20%" scope="col">Schools</th>
+          <th width="20%" scope="col">Timing</th>
           
         
           
