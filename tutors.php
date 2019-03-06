@@ -9,7 +9,7 @@
 <head>
 
   <link rel="icon" type="image/png" href="logo.png"/>
-<?php include "../header.php";
+<?php include "header.php";
 include "../db.php";
 
 
@@ -201,11 +201,11 @@ else
 
         <thead class="success  bg-secondary">
         <tr class="primary">
-          <th  >Sl No.</th>
-          <th  scope="col">Tutor Id</th>
-          <th  scope="col">Name</th>
-          <th  scope="col">Email</th>
-          <th  scope="col">Mobile</th>
+          <th  width="20%" >Sl No.</th>
+          <th width="20%" scope="col">Tutor Id</th>
+          <th  width="20%" scope="col">Name</th>
+          <th   width="20%" scope="col">Email</th>
+          <th   width="20%" scope="col">Mobile</th>
         
           
         </tr>

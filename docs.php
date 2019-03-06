@@ -1,5 +1,3 @@
-<?php echo "string"; 
-?>
 
 
 
@@ -27,18 +25,18 @@ include "../db.php";
 if(isset($_POST['submit'])){
 
 $error="";
-if(!empty($_POST['dancetype']))
+if(!empty($_POST['armytype']))
 {
-  $dancetype = htmlspecialchars($_POST['dancetype'],ENT_QUOTES);
+  $armytype = htmlspecialchars($_POST['armytype'],ENT_QUOTES);
 }
 else
 {
   $error.="Please Select The Dance Form<br>";
 }
 
-if(!empty($_POST['link']))
+if(!empty($_POST['file']))
 {
-  $link= htmlspecialchars($_POST['link'],ENT_QUOTES);
+  $file= htmlspecialchars($_POST['file'],ENT_QUOTES);
 }
 else
 {
@@ -46,15 +44,6 @@ else
 }
 
 
-
-if(!empty($_POST['grouptype']))
-{
-  $group= htmlspecialchars($_POST['grouptype'],ENT_QUOTES);
-}
-else
-{
-  $error.="Please Select The Group Link <br>";
-}
 
 
 
@@ -75,7 +64,7 @@ if(empty($error))
  
 
 
-  $sql = "INSERT INTO `dance`(`dancetype`, `link`, `grouptype`) VALUES ('$dancetype','$link','$group')";
+  $sql = "INSERT INTO `docs`( `armytype`, `idcard`) VALUES ('$armytype','$file')";
 
     
 
@@ -124,14 +113,14 @@ else
 
   <div class=" form-group input-group-lg form-group">
   
-         <label for="student_faculty"><h4>Dance Forms<sup>*</sup> : &nbsp;</h4> </label>
-         <select class="form-control" name="dancetype">  
+         <label for="student_faculty"><h4>Defence<sup>*</sup> : &nbsp;</h4> </label>
+         <select class="form-control" name="armytype">  
            
-           <option></option>
-           <option value="Classical">Classical</option>
-           <option value="MHip-Hop">Hip-Hop</option>
-           <option value="Contemprorary">Contemprorary</option>
-           <option  value="Bollywood">Bollywood</option>
+           <option>Select the options</option>
+           <option value="Classical">Army</option>
+           <option value="MHip-Hop">Navy</option>
+           <option value="Contemprorary">Indian Air Force</option>
+           
            
 
 
@@ -141,18 +130,11 @@ else
 
 
   <div class=" form-group input-group-lg form-group">
-     
-         
-           <label for="student_faculty"><h4>Group Type<sup>*</sup> : &nbsp;</h4></label>
-         <select class="form-control" name="grouptype">  
-           
-           <option>Groups</option>
-           <option value="Solo">Solo</option>
-           <option value="Duet">Duet</option>
-           <option value="Group">Group</option>
+        
+           <label for="student_faculty"><h4>Parents Id<sup>*</sup> : &nbsp;</h4></label>
+        <input type="file" class="form-control"  name="file">
           
 
-</select>
 
                       
   </div>

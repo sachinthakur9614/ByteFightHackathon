@@ -1,4 +1,20 @@
 
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <link rel="icon" type="image/png" href="logo.png"/>
+<?php include "header.php";
+include "../db.php";
+
+
+ ?>
+
 <?php
 
 
@@ -17,7 +33,7 @@ else
 
 if(!empty($_POST['class']))
 {
-  $lname = htmlspecialchars($_POST['class'],ENT_QUOTES);
+  $class= htmlspecialchars($_POST['class'],ENT_QUOTES);
 }
 else
 {
@@ -41,22 +57,19 @@ if(empty($error))
 {
 
 */
+ 
 
+  $sql = "INSERT INTO `CourseN`(`coursename`, `class`, `uid`) VALUES ('$coursename','$class','1')";
 
-  $sql = "	INSERT INTO `course`(`cooursename`, `class`) VALUES ($coursename,$class)";
-
-    header('Location: index.php');
+    
 
   if ($conn->query($sql) === TRUE) 
   {
 
     //$uid = $conn->insert_id;
+header('Location: index.php');
 
-
-
-
-    $success = "Thank you for registering on Labyrinth. Verification mail has been sent to your email id. Verify your account before loging in.";
-    echo $success;
+ echo "able to addd";
 
   }
   else 
@@ -81,44 +94,29 @@ else
 
 
 
+<br> 
 
 
-<!DOCTYPE html>
-<html>
+<div class="main row">
 
-<head>
+<?php require('sidebar.php'); ?>
 
-  <link rel="icon" type="image/png" href="logo.png"/>
-<?php include "../header.php";
-include "../db.php";
-include "sidebar.php";
-
- ?>
-
-
- <div class="container">
- 	<div class="row">
- 	<div class="col-md-12">
- 	
-
-
-
-
-<form action="" method="post" id="signup-form">
-
-
+<div class="main_container col-lg-9 col-md-9 col-sm-9 col-xs-12">
+  <div class="pull-right">
+      <form action="" method="post" id="signup-form"  >
+       
 
   <div class=" form-group input-group-lg form-group">
   
          <label for="student_faculty"><h4>Select the course<sup>*</sup> : &nbsp;</h4> </label>
-         <select class="form-control" name="type">  
+         <select class="form-control" name="coursename">  
            
            <option>Available Course</option>
-           <option value="Student">Sceince</option>
-           <option value="Tutor">Maths</option>
-           <option value="Tutor">Computer Sciene</option>
-           <option>< Poltical Sceine</option>
-           	<option>English</option>
+           <option value="Sceince">Sceince</option>
+           <option value="Maths">Maths</option>
+           <option value="Compuer Sceince">Computer Science</option>
+           <option  value="Poltical Sceince">< Poltical Science</option>
+           	<option value="English">English</option>
 
 
 
@@ -129,7 +127,7 @@ include "sidebar.php";
      
          
            <label for="student_faculty"><h4>Class<sup>*</sup> : &nbsp;</h4></label>
-         <select class="form-control" name="type">  
+         <select class="form-control" name="class">  
            
            <option>Classes</option>
            <option value="1st">1st</option>
@@ -145,6 +143,9 @@ include "sidebar.php";
                 <option value="10th">10<sup>th</sup></option>
   				<option value="11th">11<sup>th</sup></option>
                 <option value="12th">12th<sup>th</sup></option>
+
+</select>
+
                       
   </div>
 
@@ -156,16 +157,11 @@ include "sidebar.php";
   </div>
 
   
+      </form> 
+  </div>
+  <br><br>
 
-</form>
-
- 	</div>
-
-
- 	</div>
-
-
- </div>
+	
 
 
 
